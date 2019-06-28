@@ -33,6 +33,6 @@ def getBeautifulSoup2(url, decode='utf-8'):
         # 增加headers参数
         response = requests.get(url=url, headers=headers)
         response.encoding = decode
-        return response.text
+        return BeautifulSoup(response.text, features='lxml')
     except:
         return None
