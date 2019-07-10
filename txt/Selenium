@@ -1,0 +1,7 @@
+1.下载geckodriver.exe：
+下载地址：https://github.com/mozilla/geckodriver/releases
+下载解压后将getckodriver.exe复制到Firefox的安装目录下
+
+2.在环境变量Path中添加路径：C:\Program Files\Mozilla Firefox；
+
+3.重启cmd或IDLE再次运行代码即可
