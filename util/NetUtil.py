@@ -4,12 +4,14 @@ from urllib.request import urlopen
 import requests
 from bs4 import BeautifulSoup
 
+#BeautifulSoup(html, features='lxml') => 'html.parser' 改动 不知原因
 
 def getBeautifulSoup(url, decode='utf-8'):
     try:
         html = urlopen(url).read().decode(decode)
-        return BeautifulSoup(html, features='lxml')
-    except:
+        return BeautifulSoup(html, features='html.parser')
+    except Exception as e:
+        print(e)
         return None
 
 
@@ -21,7 +23,8 @@ def getBeautifulSoup3(url, decode='utf-8'):
         resquest = urllib.request.Request(url=url, headers=headers)
         response = urllib.request.urlopen(resquest).read()
         return response.decode(decode)
-    except:
+    except Exception as e:
+        print(e)
         return None
 
 
@@ -34,5 +37,6 @@ def getBeautifulSoup2(url, decode='utf-8'):
         response = requests.get(url=url, headers=headers)
         response.encoding = decode
         return BeautifulSoup(response.text, features='lxml')
-    except:
+    except Exception as e:
+        print(e)
         return None
