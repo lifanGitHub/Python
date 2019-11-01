@@ -36,7 +36,7 @@ def getBeautifulSoup2(url, decode='utf-8'):
         # 增加headers参数
         response = requests.get(url=url, headers=headers)
         response.encoding = decode
-        return BeautifulSoup(response.text, features='lxml')
+        return BeautifulSoup(response.text, features='html.parser')
     except Exception as e:
         print(e)
         return None
