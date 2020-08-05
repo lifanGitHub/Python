@@ -1,13 +1,12 @@
-from bs4 import NavigableString
+import urllib.request
 
-from util import NetUtil
-from util import PrintUtil as ps
+from bs4 import Tag, NavigableString
+
+from util import NetUtil, IOUtil
+
 
 def main():
-    index = 158626 + 10
-    url = 'https://www.kanunu8.com/book3/7152/' + str(index) + '.html'
-    print(url)
-    soup = NetUtil.getBeautifulSoup2(url, decode="GBK")
+    soup = NetUtil.getBeautifulSoup2('http://www.yuedu88.com/chanyumotuocheweixiuyishu/30056.html',decode="GBK")
     items = soup.find(name='td', attrs={'width': '820'})
     # print(items.contents[1].contents)
 
@@ -20,9 +19,9 @@ def main():
             if len(st) > 100:
                 st = st[:99] + "\n" + st[100:]
             resultList.append(st)
+            resultList.append("\n<class 'dict'>: {'*': ['class', 'accesskey', 'dropzone'], 'a': ['rel', 'rev'], 'link': ['rel', 'rev'], 'td': ['headers'], 'th': ['headers'], 'form': ['accept-charset']")
 
-    ps.print_string("".join(resultList),60)
-
+    print("".join(resultList))
 
 if __name__ == '__main__':
     main()
