@@ -13,6 +13,11 @@ def print_string(string="", div=20):
     print("".join(sb))
 
 
+def save_string(src="", name=""):
+    f = open(name, "w")
+    f.write(src)
+    f.close()
+
 
 # for index in range(len(sb)):
 #     if sb[index] == "\n":
@@ -23,7 +28,8 @@ def print_string(string="", div=20):
 
 
 def main():
-    print_string("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
+    print_string(
+        "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
 
 
 if __name__ == '__main__':
