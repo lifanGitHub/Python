@@ -7,8 +7,8 @@ if __name__ == '__main__':
     items = soup.find(name='div', attrs={'id': 'endText'})
     endTitle = str(soup.find(name='h1', attrs={'id': 'endTitle'}).contents[0].contents[0])
     print("下载小说《{}》开始...".format(endTitle))
-    div1 = items.contents[1].contents
-    result = "" + str(div1[1]) + str(div1[3]) + str(div1[7]) + str(div1[9])
+    # div1 = items.contents[1].contents
+    # result = "" + str(div1[1]) + str(div1[3]) + str(div1[7]) + str(div1[9])
     for i in range(2, 1024):
         index = "_" + str(i)
         url = 'https://www.sztz.org/wenxue/jun/200811/8718' + index + '.html'
